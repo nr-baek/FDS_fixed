@@ -8,9 +8,9 @@ html {
 body {
   font-size: 1.6rem;
   color: #181818; 
-  background:#fff;
   font-family: 'Spoqa Han Sans';
   font-weight: 400;
+  background: url(./images/bg_flower.png) no-repeat 50% 0 scroll, #fff linear-gradient(to bottom, #ccc 0%, #fff 70%, #fff 100%);
 }
 
 *, *::before, *::after {
@@ -28,7 +28,7 @@ body {
 
 /* 레이아웃 */
 .container {
-  background-color: #ccc;
+  /* background-color: #ccc; */
 }
 
 .header,
@@ -42,7 +42,7 @@ body {
 
 /* 헤더 영역 */
 .header {
-  background-color: yellow;
+  background-color: #fff;
   padding: 1px 30px;
   position: relative;
   border-radius: 0 0 15px 15px;
@@ -115,6 +115,7 @@ body {
   list-style: none;
   white-space: nowrap;
   padding-left: 0;
+  font-size: 1.4rem;
 }
 .sub-menu a {
   padding: 8px 0;
@@ -158,10 +159,57 @@ body {
   display: block;  /* 선택되면 서브메뉴 보이게 */
 }
 
+/* 비주얼 영역 */
 .visual {
-  background-color: lime;
   height: 120px; /* 높이가 일정하며 바뀌지 않기 때문에 height값을 지정해줌 */
+  position: relative;
 }
+@keyframes textAni {
+  0% {
+    font-size: 12px;
+    transform: translate(0, 0);
+    color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    font-size: 24px;
+    transform: translate(400px, 75px);
+    color: rgba(0, 0, 0, 1);
+  }
+}
+@keyframes bgAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.visual-text {
+  width: 500px;
+  font-size: 2.4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: textAni 2000ms ease-in-out forwards;
+}
+.visual::before, .visual::after {
+  animation: bgAni 2000ms ease-in-out infinite alternate;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.visual::before {
+  background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
+  background-position: 0 -10px, 670px 0;
+}
+.visual::after {
+  background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png);
+  background-position: 300px 0, 800px 0;
+  animation-delay: 1000ms;
+}
+
 .main {
   background-color: blue;
   display: flex;

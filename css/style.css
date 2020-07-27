@@ -17,7 +17,7 @@ body {
   box-sizing: border-box;
 }
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden, legend {
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -27,9 +27,9 @@ body {
 }
 
 /* 레이아웃 */
-.container {
-  /* background-color: #ccc; */
-}
+/* .container {
+  background-color: #ccc;
+} */
 
 .header,
 .visual,
@@ -210,6 +210,7 @@ body {
   animation-delay: 1000ms;
 }
 
+/* 메인 영역 */
 .main {
   background-color: blue;
   display: flex;
@@ -220,7 +221,6 @@ body {
   min-height: 450px;  /* 영역의 최소 높이를 지정해줘서 콘텐츠가 부족해도 450px 미만으로 줄지 않게 함*/
 }
 .group1 {
-  background-color: tomato;
   width: 250px;
 }
 .group2 {
@@ -231,9 +231,171 @@ body {
   background-color: dodgerblue;
   width: 190px;
 }
+/* 로그인 영역 */
+.login {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e65400;
+  background-image: radial-gradient(circle at right top, #ff9100, #e65400);
+  box-shadow: 5px 5px 0 0 #bbb;
+  width: calc(100% - 5px);
+}
+.login-heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ff0;
+  margin: 0;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.login-form {
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.login-form div {
+  width: 150px;
+  margin-bottom: 5px;
+}
+.login-form label {
+  width: 55px;
+  display: inline-block;
+}
+.login-form input {
+  width: 90px;
+  height: 24px;
+  padding: 1px 1px 1px 0.5em;
+  border-radius: 0;
+  border: 1px solid #aaa;
+}
+.btn-login {
+  border: 0;
+  width: 50px;
+  height: 52px;
+  padding: 5px;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #e65400;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.member-only {
+  list-style: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.3rem;
+  border-radius: 0 0 5px 5px;
+}
+.member-only li:first-child {
+  float: left;
+}
+.member-only li:last-child {
+  float: right;
+}
+.member-only a {
+  text-decoration: none;
+  color: inherit;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.member-only a::before {
+  font-family: 'fontello';
+  content: '\e803';
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  color: #e65400;
+}
+.member-only::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 유효성 검사 배너 */
+.validation-list {
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+}
+.validation-list a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background-color: #ccc;
+  background-image: url(./images/validation_icon.png), linear-gradient(180deg, #bbb, #eee);
+  background-repeat: no-repeat, repeat;
+  background-position: 15px 50%,  0 0;
+  margin-top: 10px;
+  padding: 8px 10px 8px 45px;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+}
+
+/* 웹 관련 용어 */
+.term {
+  padding: 15px;
+  background-color: yellow;
+  margin-top: 20px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #bbb, #eee);
+  border: 1px solid #aaa;
+}
+.term-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+.term-list {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.term-list > div {
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+.term-list > div::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.term-list-subject, .term-list-brief {
+  float: right;
+  width: 145px;
+}
+.term-list-thumbnail {
+  margin-left: 0;
+  float: left;
+}
+.term-list-subject {
+  color: #3460f0;
+}
+.term-list-brief {
+  margin: 0;
+  margin-top: 5px;
+}
+.term-list-brief a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 슬로건 */
 .slogan {
   background-color: orange;
 }
+/* 푸터 영역 */
 .footer-bg {
   background-color: green;
 }

@@ -231,6 +231,99 @@ body {
   background-color: dodgerblue;
   width: 190px;
 }
+/* 로그인 영역 */
+.login {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e65400;
+  background-image: radial-gradient(circle at right top, #ff9100, #e65400);
+  box-shadow: 5px 5px 0 0 #bbb;
+  width: calc(100% - 5px);
+}
+.login-heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ff0;
+  margin: 0;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.login-form {
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.login-form div {
+  width: 150px;
+  margin-bottom: 5px;
+}
+.login-form label {
+  width: 55px;
+  display: inline-block;
+}
+.login-form input {
+  width: 90px;
+  height: 24px;
+  padding: 1px 1px 1px 0.5em;
+  border-radius: 0;
+  border: 1px solid #aaa;
+}
+.btn-login {
+  border: 0;
+  width: 50px;
+  height: 52px;
+  padding: 5px;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #e65400;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.member-only {
+  list-style: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.3rem;
+  border-radius: 0 0 5px 5px;
+}
+.member-only li:first-child {
+  float: left;
+}
+.member-only li:last-child {
+  float: right;
+}
+.member-only a {
+  text-decoration: none;
+  color: inherit;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.member-only a::before {
+  font-family: 'fontello';
+  content: '\e803';
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  color: #e65400;
+}
+.member-only::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .slogan {
   background-color: orange;
 }

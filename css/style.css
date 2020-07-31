@@ -26,9 +26,10 @@ body {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-/* 레이아웃 */
-.container {
-  /* background-color: #ccc; */
+/* 링크 스타일 */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .header,
@@ -212,7 +213,8 @@ body {
 
 /* 메인 영역 */
 .main {
-  background-color: blue;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -224,7 +226,6 @@ body {
   width: 250px;
 }
 .group2 {
-  background-color: yellowgreen;
   width: 380px;
 }
 .group3 {
@@ -389,6 +390,153 @@ body {
 .term-list-brief a{
   text-decoration: none;
   color: inherit;
+}
+
+/* 검색 영역 */
+.search-form {
+  padding: 15px 25px 10px;
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #aaa;
+  border-bottom-color: #fff;
+  background: #ccc linear-gradient(180deg, #ccc, #fff);
+  font-size: 1.4rem;
+}
+.search-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.search-form div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-form label::before {
+  content: '\e802';
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+.search-form div input {
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  width: 200px;
+  height: 24px;
+  padding: 1px 1px 1px 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.search-form label,
+.btn-search {
+  white-space: nowrap;
+}
+.btn-search {
+  background-color: #222;
+  color: #fff;
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+/* 공지사항 및 자료실 */
+
+.board {
+  /* background-color: yellow; */
+  margin-top: 20px; /* 20 떨어지게.. 이해 안됨*/
+  position: relative;
+  padding-top: 45px;
+}
+.notice-heading,
+.pds-heading {
+  margin: 0 ; /*h2태그의 기본값 초기화*/
+  font-size: 1.4rem;
+  font-weight: 400; /*스포카한산스 regular로 하려고*/
+  position: absolute;
+  top: 0;
+}
+.notice-heading {
+  left: 0;
+}
+.pds-heading {
+  left: 73px;
+}
+.tab {  /*그냥 탭일때 비활성화탭*/
+  display: block;
+  color: #666;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0 ;
+  padding: 5px 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);;
+}
+.tab-act .tab { /* 상태디자인 */
+  color: #e65400;
+  border-color: #e65400 #e65400 #fff #e65400;
+  background: #fff; /*백그라운드 컬러로 하면 안됨 그라디언트가 그대로 남음 비활성화일때 백그라운드였으니까 이번에도 백그라운드로 해야된다고 함*/
+}
+
+.notice-list, 
+.pds-list, 
+.notice-more, 
+.pds-more {
+  display: none;   /*겹쳐있으니까 하나만 보여주려면 일단 다 none으로*/
+}
+
+.tab-act .notice-list, 
+.tab-act .pds-list, 
+.tab-act .notice-more, 
+.tab-act .pds-more {
+  display: block;   /*우선순위를 더 높여서 tab-act가 포함된 애는 none해제*/
+}
+.notice-list, 
+.pds-list {
+  /* background-color: silver; */
+  list-style: none;
+  margin: 0;
+  min-height: 130px;
+  padding-left: 0;
+}
+.notice-list li::after, .pds-list li::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.notice-list a::before,
+.pds-list a::before {
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+
+.notice-list a, .pds-list a {
+  /* background-color: skyblue; */
+  float: left;
+  width:290px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.notice-list time, .pds-list time {
+  /* background-color: violet; */
+  float: right;
+}
+.notice-list li, 
+.pds-list li{
+  /* background-color: orangered; */
+  margin-bottom: 10px;
+}
+.notice-more,
+.pds-more {
+  /* background-color: lime; */
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+  /* pointer너비를 느려주려 패딩을 추가하되 포지션은 그대로 하기위해 조정 */
+} 
+.icon-plus::before {
+  color: hsla(110, 70%, 50%, 1);
 }
 
 /* 슬로건 */

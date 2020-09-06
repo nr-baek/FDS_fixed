@@ -692,12 +692,103 @@ a {
 
 /* 슬로건 */
 .slogan {
-  background-color: orange;
+  position: relative;
+  padding: 15px 80px 15px 170px; /*콘텐츠에 영역 확보용*/
 }
+.slogan-heading {
+  margin: 0;
+  width: 110px;
+  height: 83px;
+  position: absolute; /*relative아님*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  left: 35px;
+  bottom: -25px;
+}
+.slogan-heading::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./images/coffee.png) no-repeat scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slogan-brief {
+  color: #a09784;
+  font-size: 1.3rem;
+}
+.slogan-brief q {
+  font-weight: 700;
+}
+.slogan-brief q::after {
+  content: "";
+}
+.slogan-brief q::before {
+  font-size: 3rem;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 /* 푸터 영역 */
 .footer-bg {
-  background-color: green;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px 0;
 }
 .footer {
-  background-color: violet;
+  padding: 0 100px 0 170px;
+  position: relative;
+
+}
+/* 푸터 로고 */
+.footer-logo {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+}
+/* 가이드 링크 */
+.guide-list {
+  margin: 0;
+  padding: 4px 20px;
+  list-style: none;
+  background-color: #7b8385;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+.guide-list a {
+  display: block;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
+/* 주소 및 연락처 */
+.address {
+  font-style: normal;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.address span {
+  margin-right: 10px;
+}
+
+/* 저작권 */
+.copyright {
+  font-size: 1.4rem;
+  display: block;
+}
+/* 적용 기술 배지 */
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
